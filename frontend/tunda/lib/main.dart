@@ -20,7 +20,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final dbHelper = DatabaseHelper.instance;
+  //final dbHelper = DatabaseHelper.instance;
   final String table = 'banana';
 
   void _insert() async {
@@ -29,14 +29,14 @@ class _MyHomePageState extends State<MyHomePage> {
       'status': 'ripe',
       'expected_expiry_date': '2024-06-27'
     };
-    final id = await dbHelper.insert(table, row);
-    print('inserted row id: $id');
+    //final id = await dbHelper.insert(table, row);
+    //print('inserted row id: $id');
   }
 
   void _query() async {
-    final allRows = await dbHelper.queryAllRows(table);
+    //final allRows = await dbHelper.queryAllRows(table);
     print('query all rows:');
-    allRows.forEach(print);
+   // allRows.forEach(print);
   }
 
   void _update() async {
@@ -46,13 +46,13 @@ class _MyHomePageState extends State<MyHomePage> {
       'status': 'unripe',
       'expected_expiry_date': '2024-07-02'
     };
-    final rowsAffected = await dbHelper.update(table, row);
-    print('updated $rowsAffected row(s)');
+    //final rowsAffected = await dbHelper.update(table, row);
+   // print('updated $rowsAffected row(s)');
   }
 
   void _delete() async {
-    final id = await dbHelper.delete(table, 1);
-    print('deleted $id row(s)');
+   // final id = await dbHelper.delete(table, 1);
+   // print('deleted $id row(s)');
   }
 
   @override
