@@ -1,3 +1,4 @@
+// import sqlite3 modules and create a database if not available
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./fruits.db', (err) => {
   if (err) {
@@ -6,6 +7,7 @@ const db = new sqlite3.Database('./fruits.db', (err) => {
   console.log('Connected to the fruits database.');
 });
 
+//function to create tables in the database
 const createTable = (tableName) => {
   return new Promise((resolve, reject) => {
     const query = `
@@ -25,7 +27,7 @@ const createTable = (tableName) => {
     });
   });
 };
-
+//function to insert data into the database
 const insertData = (tableName, data) => {
   return new Promise((resolve, reject) => {
     const query = `INSERT INTO ${tableName} (stocking_date, status, expected_expiry_date) VALUES (?, ?, ?)`;
@@ -46,7 +48,7 @@ const insertData = (tableName, data) => {
     });
   });
 };
-
+//function to read data from the database
 const readData = (tableName) => {
   return new Promise((resolve, reject) => {
     const query = `SELECT * FROM ${tableName}`;
@@ -59,7 +61,7 @@ const readData = (tableName) => {
     });
   });
 };
-
+//function to delete a table from the database
 const deleteTable = (tableName) => {
   return new Promise((resolve, reject) => {
     const query = `DROP TABLE IF EXISTS ${tableName}`;
@@ -72,7 +74,7 @@ const deleteTable = (tableName) => {
     });
   });
 };
-
+//exporting all the created functions
 module.exports = {
   createTable,
   insertData,
