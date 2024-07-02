@@ -4,6 +4,7 @@ void main() {
   runApp(MyApp());
 }
 
+// Main entry point of the application
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,45 +15,36 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// Stateful widget to handle actions
 class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  //final dbHelper = DatabaseHelper.instance;
-  final String table = 'banana';
 
-  void _insert() async {
-    Map<String, dynamic> row = {
-      'stocking_date': '2024-06-20',
-      'status': 'ripe',
-      'expected_expiry_date': '2024-06-27'
-    };
-    //final id = await dbHelper.insert(table, row);
-    //print('inserted row id: $id');
+  // Insert action placeholder
+  void _insert() {
+    print('Insert action');
+    // Placeholder for the insert action
   }
 
-  void _query() async {
-    //final allRows = await dbHelper.queryAllRows(table);
-    print('query all rows:');
-   // allRows.forEach(print);
+  // Query action placeholder
+  void _query() {
+    print('Query action');
+    // Placeholder for the query action
   }
 
-  void _update() async {
-    Map<String, dynamic> row = {
-      'id': 1,
-      'stocking_date': '2024-06-22',
-      'status': 'unripe',
-      'expected_expiry_date': '2024-07-02'
-    };
-    //final rowsAffected = await dbHelper.update(table, row);
-   // print('updated $rowsAffected row(s)');
+  // Update action placeholder
+  void _update() {
+    print('Update action');
+    // Placeholder for the update action
   }
 
-  void _delete() async {
-   // final id = await dbHelper.delete(table, 1);
-   // print('deleted $id row(s)');
+  // Delete action placeholder
+  void _delete() {
+    print('Delete action');
+    // Placeholder for the delete action
   }
 
   @override
